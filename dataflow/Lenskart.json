@@ -84,7 +84,6 @@
 				"          brand_name,",
 				"          model_name,",
 				"          classification,",
-				"          specifications,",
 				"          wishlistCount,",
 				"          purchaseCount,",
 				"          avgRating,",

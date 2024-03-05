@@ -13,6 +13,161 @@
 	},
 	"resources": [
 		{
+			"name": "[concat(parameters('factoryName'), '/MongoDbV2Collection2')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "MongoDb2",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "MongoDbV2Collection",
+				"schema": [],
+				"typeProperties": {
+					"collection": "quizsets"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/OutputFile')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "OutputData.csv",
+						"folderPath": "OutputFolder",
+						"container": "data"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Lenskart')]",
+			"type": "Microsoft.DataFactory/factories/dataflows",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "MappingDataFlow",
+				"typeProperties": {
+					"sources": [
+						{
+							"dataset": {
+								"referenceName": "DelimitedText1",
+								"type": "DatasetReference"
+							},
+							"name": "source1"
+						}
+					],
+					"sinks": [
+						{
+							"dataset": {
+								"referenceName": "AzureSqlTable16",
+								"type": "DatasetReference"
+							},
+							"name": "sink1"
+						}
+					],
+					"transformations": [
+						{
+							"name": "select1"
+						}
+					],
+					"scriptLines": [
+						"source(output(",
+						"          id as string,",
+						"          image_url as string,",
+						"          image_url_suffix as string,",
+						"          imageUrls as string,",
+						"          product_url as string,",
+						"          occasion as string,",
+						"          suited_for as string,",
+						"          brand_name as string,",
+						"          brand_name_en as string,",
+						"          model_name as string,",
+						"          prices as string,",
+						"          is_tbyb as string,",
+						"          tags as string,",
+						"          color_options as string,",
+						"          totalColorAvailable as string,",
+						"          is_ditto as string,",
+						"          classification as string,",
+						"          specifications as string,",
+						"          wishlistCount as string,",
+						"          purchaseCount as string,",
+						"          avgRating as string,",
+						"          totalNoOfRatings as string,",
+						"          hashtagList as string,",
+						"          offerName as string,",
+						"          clUsage as string,",
+						"          arModelAndroidUrl as string,",
+						"          arModelIOSUrl as string,",
+						"          arModelMsiteAndDesktopUrl as string,",
+						"          arModelOriginalUrl as string,",
+						"          qty as string,",
+						"          subCollection as string,",
+						"          inclusiveText as string,",
+						"          relatedItems as string,",
+						"          isCygnusEnabled as string,",
+						"          isCashbackApplicable as string,",
+						"          searchProductName as string,",
+						"          prescriptionType as string,",
+						"          brand_logo as string,",
+						"          color as string,",
+						"          size as string,",
+						"          width as string,",
+						"          cmsLinkAndroid as string,",
+						"          cmsLinkIos as string,",
+						"          frameColorImage as string,",
+						"          isCombo as string,",
+						"          tryOnImageUrl as string,",
+						"          offer_image as string",
+						"     ),",
+						"     allowSchemaDrift: true,",
+						"     validateSchema: false,",
+						"     ignoreNoFilesFound: false) ~> source1",
+						"source1 select(mapColumn(",
+						"          id,",
+						"          brand_name,",
+						"          model_name,",
+						"          classification,",
+						"          wishlistcount = wishlistCount,",
+						"          purchaseCount,",
+						"          avgRating,",
+						"          qty",
+						"     ),",
+						"     skipDuplicateMapInputs: true,",
+						"     skipDuplicateMapOutputs: true) ~> select1",
+						"select1 sink(allowSchemaDrift: true,",
+						"     validateSchema: false,",
+						"     deletable:false,",
+						"     insertable:true,",
+						"     updateable:false,",
+						"     upsertable:false,",
+						"     format: 'table',",
+						"     skipDuplicateMapInputs: true,",
+						"     skipDuplicateMapOutputs: true,",
+						"     errorHandlingOption: 'stopOnFirstError') ~> sink1"
+					]
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/dataflow2')]",
 			"type": "Microsoft.DataFactory/factories/dataflows",
 			"apiVersion": "2018-06-01",
@@ -271,7 +426,9 @@
 				},
 				"annotations": []
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/dataflows/Lenskart')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/pipeline2')]",
@@ -379,7 +536,9 @@
 				"annotations": [],
 				"lastPublishTime": "2024-03-04T10:48:09Z"
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/MongoDbV2Collection2')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/pipeline3')]",
@@ -540,6 +699,78 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/Prices_Contact_Lens')]",
+			"type": "Microsoft.DataFactory/factories/dataflows",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "MappingDataFlow",
+				"typeProperties": {
+					"sources": [
+						{
+							"dataset": {
+								"referenceName": "DelimitedText2",
+								"type": "DatasetReference"
+							},
+							"name": "source1"
+						}
+					],
+					"sinks": [
+						{
+							"dataset": {
+								"referenceName": "AzureSqlTable17",
+								"type": "DatasetReference"
+							},
+							"name": "sink1"
+						}
+					],
+					"transformations": [
+						{
+							"name": "derivedColumn1"
+						},
+						{
+							"name": "select1"
+						}
+					],
+					"scriptLines": [
+						"source(output(",
+						"          {Product Id} as string,",
+						"          {Market Price} as integer,",
+						"          {Lenskart Price} as integer",
+						"     ),",
+						"     allowSchemaDrift: true,",
+						"     validateSchema: false,",
+						"     ignoreNoFilesFound: false) ~> source1",
+						"source1 derive(Difference = {Market Price} - {Lenskart Price}) ~> derivedColumn1",
+						"derivedColumn1 select(mapColumn(",
+						"          Product_Id = {Product Id},",
+						"          Market_Price = {Market Price},",
+						"          Lenskart_Price = {Lenskart Price},",
+						"          Difference",
+						"     ),",
+						"     skipDuplicateMapInputs: true,",
+						"     skipDuplicateMapOutputs: true) ~> select1",
+						"select1 sink(allowSchemaDrift: true,",
+						"     validateSchema: false,",
+						"     input(",
+						"          Product_Id as string,",
+						"          Market_Price as integer,",
+						"          Lenskart_Price as integer,",
+						"          Difference as integer",
+						"     ),",
+						"     deletable:false,",
+						"     insertable:true,",
+						"     updateable:false,",
+						"     upsertable:false,",
+						"     format: 'table',",
+						"     skipDuplicateMapInputs: true,",
+						"     skipDuplicateMapOutputs: true,",
+						"     errorHandlingOption: 'stopOnFirstError') ~> sink1"
+					]
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/dataflow1')]",
 			"type": "Microsoft.DataFactory/factories/dataflows",
 			"apiVersion": "2018-06-01",
@@ -586,7 +817,9 @@
 					]
 				}
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/OutputFile')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/pipeline1')]",

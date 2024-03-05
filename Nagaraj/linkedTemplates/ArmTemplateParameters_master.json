@@ -86,6 +86,9 @@
 		"AzureSqlDatabase9_connectionString": {
 			"value": ""
 		},
+		"LenskartLinkedservice_connectionString": {
+			"value": ""
+		},
 		"MongoDb1_connectionString": {
 			"value": ""
 		},

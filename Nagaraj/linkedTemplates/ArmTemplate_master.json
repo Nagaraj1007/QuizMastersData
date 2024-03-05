@@ -116,6 +116,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase9'"
 		},
+		"LenskartLinkedservice_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LenskartLinkedservice'"
+		},
 		"MongoDb1_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'MongoDb1'"
@@ -258,6 +262,9 @@
 					},
 					"AzureSqlDatabase9_connectionString": {
 						"value": "[parameters('AzureSqlDatabase9_connectionString')]"
+					},
+					"LenskartLinkedservice_connectionString": {
+						"value": "[parameters('LenskartLinkedservice_connectionString')]"
 					}
 				}
 			},

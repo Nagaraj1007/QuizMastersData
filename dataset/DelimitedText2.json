@@ -1,0 +1,37 @@
+{
+	"name": "DelimitedText2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Lenskart_Contact_Lens_Data_Prices.csv",
+				"folderPath": "InputFolder",
+				"container": "data"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Product Id",
+				"type": "String"
+			},
+			{
+				"name": "Market Price",
+				"type": "String"
+			},
+			{
+				"name": "Lenskart Price",
+				"type": "String"
+			}
+		]
+	}
+}

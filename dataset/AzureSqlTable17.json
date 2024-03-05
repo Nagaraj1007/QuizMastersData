@@ -1,0 +1,36 @@
+{
+	"name": "AzureSqlTable17",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Product_Id",
+				"type": "varchar"
+			},
+			{
+				"name": "Market_Price",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Lenskart_Price",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Difference",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "LensData",
+			"table": "Prices"
+		}
+	}
+}

@@ -1,0 +1,105 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "Nagaraj"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": "DefaultEndpointsProtocol=https;AccountName=storagenagaraj;EndpointSuffix=core.windows.net;"
+		},
+		"AzureBlobStorage2_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage3_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage4_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage5_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage6_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage7_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage8_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage9_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase10_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase11_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase12_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase13_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase14_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase15_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase16_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase17_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase18_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase2_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase3_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase4_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase5_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase6_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase7_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase8_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase9_connectionString": {
+			"value": ""
+		},
+		"MongoDb1_connectionString": {
+			"value": ""
+		},
+		"MongoDb2_connectionString": {
+			"value": ""
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://test-adf.vault.azure.net/"
+		},
+		"MongoDb1_properties_typeProperties_database": {
+			"value": "Quiz"
+		},
+		"MongoDb2_properties_typeProperties_database": {
+			"value": "test"
+		}
+	}
+}

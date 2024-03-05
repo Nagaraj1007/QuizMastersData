@@ -242,7 +242,6 @@
 				"          brand_name,",
 				"          model_name,",
 				"          avgRating,",
-				"          lenskart_price,",
 				"          frame_size,",
 				"          frame_shape,",
 				"          brandname,",

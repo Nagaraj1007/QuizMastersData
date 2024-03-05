@@ -84,7 +84,7 @@
 				"          brand_name,",
 				"          model_name,",
 				"          classification,",
-				"          wishlistCount,",
+				"          wishlistcount = wishlistCount,",
 				"          purchaseCount,",
 				"          avgRating,",
 				"          qty",

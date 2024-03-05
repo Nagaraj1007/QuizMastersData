@@ -1,0 +1,16 @@
+{
+	"name": "AzureSqlTable16",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase18",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "LensData",
+			"table": "Details"
+		}
+	}
+}

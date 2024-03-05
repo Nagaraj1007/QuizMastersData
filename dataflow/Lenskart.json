@@ -1,0 +1,108 @@
+{
+	"name": "Lenskart",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "DelimitedText1",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "AzureSqlTable16",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "select1"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          id as string,",
+				"          image_url as string,",
+				"          image_url_suffix as string,",
+				"          imageUrls as string,",
+				"          product_url as string,",
+				"          occasion as string,",
+				"          suited_for as string,",
+				"          brand_name as string,",
+				"          brand_name_en as string,",
+				"          model_name as string,",
+				"          prices as string,",
+				"          is_tbyb as string,",
+				"          tags as string,",
+				"          color_options as string,",
+				"          totalColorAvailable as string,",
+				"          is_ditto as string,",
+				"          classification as string,",
+				"          specifications as string,",
+				"          wishlistCount as string,",
+				"          purchaseCount as string,",
+				"          avgRating as string,",
+				"          totalNoOfRatings as string,",
+				"          hashtagList as string,",
+				"          offerName as string,",
+				"          clUsage as string,",
+				"          arModelAndroidUrl as string,",
+				"          arModelIOSUrl as string,",
+				"          arModelMsiteAndDesktopUrl as string,",
+				"          arModelOriginalUrl as string,",
+				"          qty as string,",
+				"          subCollection as string,",
+				"          inclusiveText as string,",
+				"          relatedItems as string,",
+				"          isCygnusEnabled as string,",
+				"          isCashbackApplicable as string,",
+				"          searchProductName as string,",
+				"          prescriptionType as string,",
+				"          brand_logo as string,",
+				"          color as string,",
+				"          size as string,",
+				"          width as string,",
+				"          cmsLinkAndroid as string,",
+				"          cmsLinkIos as string,",
+				"          frameColorImage as string,",
+				"          isCombo as string,",
+				"          tryOnImageUrl as string,",
+				"          offer_image as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source1",
+				"source1 select(mapColumn(",
+				"          id,",
+				"          brand_name,",
+				"          model_name,",
+				"          classification,",
+				"          specifications,",
+				"          wishlistCount,",
+				"          purchaseCount,",
+				"          avgRating,",
+				"          qty",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> select1",
+				"select1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError') ~> sink1"
+			]
+		}
+	}
+}

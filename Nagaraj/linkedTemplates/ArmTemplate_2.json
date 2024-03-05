@@ -38,25 +38,6 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('factoryName'), '/AzureSqlTable4')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase3",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [],
-				"typeProperties": {
-					"schema": "quizz",
-					"table": "table"
-				}
-			},
-			"dependsOn": []
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/AzureSqlTable5')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -892,6 +873,26 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/MongoDb1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/MongoDbV2Collection2')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "MongoDb2",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "MongoDbV2Collection",
+				"schema": [],
+				"typeProperties": {
+					"collection": "quizsets"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/MongoDb2')]"
 			]
 		}
 	]

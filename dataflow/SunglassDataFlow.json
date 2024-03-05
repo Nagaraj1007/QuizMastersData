@@ -285,7 +285,7 @@
 				"     partitionBy('hash', 1)) ~> sink2",
 				"sunglassCustomerProductDetails sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     partitionFileNames:['fact-customer-product'],",
+				"     partitionFileNames:['fact-customer-product.csv'],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
 				"     partitionBy('hash', 1)) ~> sink3",

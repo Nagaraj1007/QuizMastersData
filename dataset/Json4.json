@@ -1,0 +1,60 @@
+{
+	"name": "Json4",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage6",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "final_user_data.json",
+				"folderPath": "InputFolder",
+				"container": "data"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"firstname": {
+					"type": "string"
+				},
+				"lastname": {
+					"type": "string"
+				},
+				"phone": {
+					"type": "string"
+				},
+				"password": {
+					"type": "string"
+				},
+				"results": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"quizName": {
+								"type": "string"
+							},
+							"quizCode": {
+								"type": "integer"
+							},
+							"score": {
+								"type": "integer"
+							},
+							"userId": {
+								"type": "string"
+							},
+							"total": {
+								"type": "integer"
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

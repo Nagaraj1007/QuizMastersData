@@ -1,0 +1,17 @@
+{
+	"name": "AzureSqlTable8",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase10",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "Transformed",
+			"table": "table"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

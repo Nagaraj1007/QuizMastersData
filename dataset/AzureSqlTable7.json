@@ -1,0 +1,38 @@
+{
+	"name": "AzureSqlTable7",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase9",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "userID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "domain",
+				"type": "nvarchar"
+			},
+			{
+				"name": "questionName",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "FinalQuiz",
+			"table": "QuizSets"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

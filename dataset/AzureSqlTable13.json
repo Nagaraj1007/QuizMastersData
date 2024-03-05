@@ -1,0 +1,32 @@
+{
+	"name": "AzureSqlTable13",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase15",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "userID",
+				"type": "varchar"
+			},
+			{
+				"name": "NumberOfQuizes",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "rank",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "Results",
+			"table": "Table"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

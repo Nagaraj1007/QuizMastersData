@@ -1,0 +1,9 @@
+{
+	"name": "Nagaraj",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "e4a2b693-48fd-4aac-b340-9199782f1c0c",
+		"tenantId": "2800c0a0-70e9-49be-8733-faeaa6aced99"
+	}
+}

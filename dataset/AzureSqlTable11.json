@@ -1,0 +1,17 @@
+{
+	"name": "AzureSqlTable11",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase13",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "Results",
+			"table": "Table"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,57 @@
+{
+	"name": "Json2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage3",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "quiz_data.json",
+				"folderPath": "InputFolder",
+				"container": "data"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"code": {
+					"type": "string"
+				},
+				"userID": {
+					"type": "string"
+				},
+				"name": {
+					"type": "string"
+				},
+				"domain": {
+					"type": "string"
+				},
+				"questions": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"questionName": {
+								"type": "string"
+							},
+							"options": {
+								"type": "array",
+								"items": {
+									"type": "string"
+								}
+							},
+							"answer": {
+								"type": "string"
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

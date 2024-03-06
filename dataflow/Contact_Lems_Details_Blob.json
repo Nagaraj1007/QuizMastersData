@@ -1,5 +1,5 @@
 {
-	"name": "Lenskart",
+	"name": "Contact_Lems_Details_Blob",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
@@ -15,7 +15,7 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "Contact_Lens_Details_SQLDB",
+						"referenceName": "Contact_Lens_Details_Blob",
 						"type": "DatasetReference"
 					},
 					"name": "sink1"
@@ -93,14 +93,11 @@
 				"     skipDuplicateMapOutputs: true) ~> select1",
 				"select1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     deletable:false,",
-				"     insertable:true,",
-				"     updateable:false,",
-				"     upsertable:false,",
-				"     format: 'table',",
+				"     partitionFileNames:['Contact_Details.csv'],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     errorHandlingOption: 'stopOnFirstError') ~> sink1"
+				"     partitionBy('hash', 1),",
+				"     format: 'table') ~> sink1"
 			]
 		}
 	}

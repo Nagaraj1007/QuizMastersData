@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataflow": {
-						"referenceName": "Lenskart",
+						"referenceName": "Contact_Lems_Details_Blob",
 						"type": "DataFlowReference"
 					},
 					"compute": {

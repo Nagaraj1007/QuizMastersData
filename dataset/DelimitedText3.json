@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "Contact_Lens_Details.csv",
+				"fileName": "Contact_Lens_Prices.csv",
 				"folderPath": "Contact_Lens1",
 				"container": "destinationlenskart"
 			},

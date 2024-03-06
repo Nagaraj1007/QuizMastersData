@@ -1,5 +1,5 @@
 {
-	"name": "Data_From_MongoDB_To_Blob",
+	"name": "Questionsets_From_MongoDB",
 	"properties": {
 		"activities": [
 			{

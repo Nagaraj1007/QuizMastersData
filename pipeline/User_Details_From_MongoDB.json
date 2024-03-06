@@ -1,5 +1,5 @@
 {
-	"name": "pipeline4",
+	"name": "User_Details_From_MongoDB",
 	"properties": {
 		"activities": [
 			{

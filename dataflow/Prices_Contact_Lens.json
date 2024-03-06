@@ -27,6 +27,9 @@
 				},
 				{
 					"name": "select1"
+				},
+				{
+					"name": "derivedColumn2"
 				}
 			],
 			"scriptLines": [
@@ -39,7 +42,7 @@
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
 				"source1 derive(Difference = {Market Price} - {Lenskart Price}) ~> derivedColumn1",
-				"derivedColumn1 select(mapColumn(",
+				"derivedColumn2 select(mapColumn(",
 				"          Product_Id = {Product Id},",
 				"          Market_Price = {Market Price},",
 				"          Lenskart_Price = {Lenskart Price},",
@@ -47,6 +50,7 @@
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> select1",
+				"derivedColumn1 derive(Discount_Reference = iif(Difference > 0, 'Discount applied', 'Discount not applied')) ~> derivedColumn2",
 				"select1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",

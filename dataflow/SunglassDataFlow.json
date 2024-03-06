@@ -85,13 +85,13 @@
 					"name": "groupByCustomer"
 				},
 				{
-					"name": "rank1"
-				},
-				{
 					"name": "customerbyrankofpurchase"
 				},
 				{
 					"name": "select1"
+				},
+				{
+					"name": "sort1"
 				}
 			],
 			"scriptLines": [
@@ -251,9 +251,7 @@
 				"     skipDuplicateMapOutputs: true) ~> sunglassCustomerProductDetails",
 				"sunglassCustomerProductDetails aggregate(groupBy(customer_id),",
 				"     total_purchase = sum(quantity)) ~> groupByCustomer",
-				"groupByCustomer rank(desc(total_purchase, true),",
-				"     output(Rank as long)) ~> rank1",
-				"rank1, customerdataset join(groupByCustomer@customer_id == customerdataset@customer_id,",
+				"groupByCustomer, customerdataset join(groupByCustomer@customer_id == customerdataset@customer_id,",
 				"     joinType:'inner',",
 				"     matchType:'exact',",
 				"     ignoreSpaces: false,",
@@ -266,11 +264,11 @@
 				"          last_name,",
 				"          email,",
 				"          phone_number,",
-				"          address,",
-				"          Rank",
+				"          address",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> select1",
+				"select1 sort(desc(total_purchase, true)) ~> sort1",
 				"derivedColumn2 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     partitionFileNames:['price-dimension.csv'],",
@@ -289,7 +287,7 @@
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
 				"     partitionBy('hash', 1)) ~> sink3",
-				"select1 sink(allowSchemaDrift: true,",
+				"sort1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     partitionFileNames:['Matrix-TopCustomers.csv'],",
 				"     skipDuplicateMapInputs: true,",

@@ -1,5 +1,5 @@
 {
-	"name": "AzureSqlTable15",
+	"name": "Merged_Table_Quizes",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureSqlDatabase17",

@@ -15,7 +15,7 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "AzureSqlTable16",
+						"referenceName": "Contact_Lens_Details_SQLDB",
 						"type": "DatasetReference"
 					},
 					"name": "sink1"

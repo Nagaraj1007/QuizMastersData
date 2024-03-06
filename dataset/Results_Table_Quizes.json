@@ -1,5 +1,5 @@
 {
-	"name": "AzureSqlTable13",
+	"name": "Results_Table_Quizes",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureSqlDatabase15",

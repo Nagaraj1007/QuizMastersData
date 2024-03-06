@@ -1,5 +1,5 @@
 {
-	"name": "pipeline2",
+	"name": "Data_From_MongoDB_To_Blob",
 	"properties": {
 		"activities": [
 			{

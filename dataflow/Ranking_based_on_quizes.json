@@ -1,5 +1,5 @@
 {
-	"name": "dataflow3",
+	"name": "Ranking_based_on_quizes",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {

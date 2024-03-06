@@ -1,5 +1,5 @@
 {
-	"name": "pipeline3",
+	"name": "Ranking_Based_On_Quizes",
 	"properties": {
 		"activities": [
 			{
@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataflow": {
-						"referenceName": "dataflow3",
+						"referenceName": "Ranking_based_on_quizes",
 						"type": "DataFlowReference"
 					},
 					"compute": {

@@ -12,10 +12,6 @@
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'",
 			"defaultValue": "DefaultEndpointsProtocol=https;AccountName=storagenagaraj;EndpointSuffix=core.windows.net;"
 		},
-		"AzureBlobStorage10_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage10'"
-		},
 		"AzureBlobStorage2_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage2'"
@@ -132,6 +128,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'MongoDb2'"
 		},
+		"AzureBlobStorage10_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage10'"
+		},
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {
 			"type": "string",
 			"defaultValue": "https://test-adf.vault.azure.net/"
@@ -170,9 +170,6 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
-					},
-					"AzureBlobStorage10_connectionString": {
-						"value": "[parameters('AzureBlobStorage10_connectionString')]"
 					},
 					"AzureBlobStorage2_connectionString": {
 						"value": "[parameters('AzureBlobStorage2_connectionString')]"
@@ -228,6 +225,9 @@
 					"AzureSqlDatabase18_connectionString": {
 						"value": "[parameters('AzureSqlDatabase18_connectionString')]"
 					},
+					"AzureSqlDatabase2_connectionString": {
+						"value": "[parameters('AzureSqlDatabase2_connectionString')]"
+					},
 					"AzureKeyVault1_properties_typeProperties_baseUrl": {
 						"value": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
 					}
@@ -249,9 +249,6 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"AzureSqlDatabase2_connectionString": {
-						"value": "[parameters('AzureSqlDatabase2_connectionString')]"
-					},
 					"AzureSqlDatabase3_connectionString": {
 						"value": "[parameters('AzureSqlDatabase3_connectionString')]"
 					},
@@ -272,6 +269,9 @@
 					},
 					"LenskartLinkedservice_connectionString": {
 						"value": "[parameters('LenskartLinkedservice_connectionString')]"
+					},
+					"AzureBlobStorage10_connectionString": {
+						"value": "[parameters('AzureBlobStorage10_connectionString')]"
 					}
 				}
 			},
@@ -335,6 +335,26 @@
 			},
 			"dependsOn": [
 				"[resourceId('Microsoft.Resources/deployments', 'Nagaraj_ArmTemplate_2')]"
+			]
+		},
+		{
+			"name": "Nagaraj_ArmTemplate_4",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_4.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'Nagaraj_ArmTemplate_3')]"
 			]
 		}
 	]

@@ -205,12 +205,12 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/DelimitedText1')]",
+			"name": "[concat(parameters('factoryName'), '/Contact_Lens_Details')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "AzureBlobStorage9",
+					"referenceName": "LenskartLinkedservice",
 					"type": "LinkedServiceReference"
 				},
 				"annotations": [],
@@ -219,8 +219,7 @@
 					"location": {
 						"type": "AzureBlobStorageLocation",
 						"fileName": "Lenskart_Contact_Lens_Data.csv",
-						"folderPath": "InputFolder",
-						"container": "data"
+						"container": "sourcelenskart"
 					},
 					"columnDelimiter": ",",
 					"escapeChar": "\\",
@@ -421,7 +420,7 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/DelimitedText2')]",
+			"name": "[concat(parameters('factoryName'), '/Contact_Lens_Price_Details')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {

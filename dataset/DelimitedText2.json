@@ -2,7 +2,7 @@
 	"name": "DelimitedText2",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureBlobStorage1",
+			"referenceName": "LenskartLinkedservice",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -11,8 +11,7 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": "Lenskart_Contact_Lens_Data_Prices.csv",
-				"folderPath": "InputFolder",
-				"container": "data"
+				"container": "sourcelenskart"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",

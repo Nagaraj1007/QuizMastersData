@@ -1,5 +1,5 @@
 {
-	"name": "dataflow2",
+	"name": "Ranking_based_on_number_of_questions",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {

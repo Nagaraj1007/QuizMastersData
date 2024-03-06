@@ -1,0 +1,85 @@
+{
+	"name": "DelimitedText5",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LenskartLinkedservice",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "sunglass-details.csv",
+				"folderPath": "sunglass",
+				"container": "destinationlenskart"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "id",
+				"type": "String"
+			},
+			{
+				"name": "color",
+				"type": "String"
+			},
+			{
+				"name": "size",
+				"type": "String"
+			},
+			{
+				"name": "width",
+				"type": "String"
+			},
+			{
+				"name": "brand_name",
+				"type": "String"
+			},
+			{
+				"name": "model_name",
+				"type": "String"
+			},
+			{
+				"name": "tags",
+				"type": "String"
+			},
+			{
+				"name": "wishlistCount",
+				"type": "String"
+			},
+			{
+				"name": "purchaseCount",
+				"type": "String"
+			},
+			{
+				"name": "avgRating",
+				"type": "String"
+			},
+			{
+				"name": "totalNoOfRatings",
+				"type": "String"
+			},
+			{
+				"name": "frame_size",
+				"type": "String"
+			},
+			{
+				"name": "frame_shape",
+				"type": "String"
+			},
+			{
+				"name": "brandname",
+				"type": "String"
+			},
+			{
+				"name": "frametype",
+				"type": "String"
+			}
+		]
+	}
+}

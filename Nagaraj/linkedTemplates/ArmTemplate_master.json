@@ -12,6 +12,10 @@
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'",
 			"defaultValue": "DefaultEndpointsProtocol=https;AccountName=storagenagaraj;EndpointSuffix=core.windows.net;"
 		},
+		"AzureBlobStorage10_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage10'"
+		},
 		"AzureBlobStorage2_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage2'"
@@ -128,10 +132,6 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'MongoDb2'"
 		},
-		"AzureBlobStorage10_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage10'"
-		},
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {
 			"type": "string",
 			"defaultValue": "https://test-adf.vault.azure.net/"
@@ -170,6 +170,9 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"AzureBlobStorage10_connectionString": {
+						"value": "[parameters('AzureBlobStorage10_connectionString')]"
 					},
 					"AzureBlobStorage2_connectionString": {
 						"value": "[parameters('AzureBlobStorage2_connectionString')]"
@@ -225,9 +228,6 @@
 					"AzureSqlDatabase18_connectionString": {
 						"value": "[parameters('AzureSqlDatabase18_connectionString')]"
 					},
-					"AzureSqlDatabase2_connectionString": {
-						"value": "[parameters('AzureSqlDatabase2_connectionString')]"
-					},
 					"AzureKeyVault1_properties_typeProperties_baseUrl": {
 						"value": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
 					}
@@ -249,6 +249,9 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"AzureSqlDatabase2_connectionString": {
+						"value": "[parameters('AzureSqlDatabase2_connectionString')]"
+					},
 					"AzureSqlDatabase3_connectionString": {
 						"value": "[parameters('AzureSqlDatabase3_connectionString')]"
 					},
@@ -269,9 +272,6 @@
 					},
 					"LenskartLinkedservice_connectionString": {
 						"value": "[parameters('LenskartLinkedservice_connectionString')]"
-					},
-					"AzureBlobStorage10_connectionString": {
-						"value": "[parameters('AzureBlobStorage10_connectionString')]"
 					}
 				}
 			},
@@ -295,21 +295,6 @@
 					},
 					"AzureBlobStorage1_connectionString": {
 						"value": "[parameters('AzureBlobStorage1_connectionString')]"
-					},
-					"AzureSqlDatabase4_connectionString": {
-						"value": "[parameters('AzureSqlDatabase4_connectionString')]"
-					},
-					"MongoDb1_connectionString": {
-						"value": "[parameters('MongoDb1_connectionString')]"
-					},
-					"MongoDb2_connectionString": {
-						"value": "[parameters('MongoDb2_connectionString')]"
-					},
-					"MongoDb1_properties_typeProperties_database": {
-						"value": "[parameters('MongoDb1_properties_typeProperties_database')]"
-					},
-					"MongoDb2_properties_typeProperties_database": {
-						"value": "[parameters('MongoDb2_properties_typeProperties_database')]"
 					}
 				}
 			},
@@ -330,6 +315,21 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"AzureSqlDatabase4_connectionString": {
+						"value": "[parameters('AzureSqlDatabase4_connectionString')]"
+					},
+					"MongoDb1_connectionString": {
+						"value": "[parameters('MongoDb1_connectionString')]"
+					},
+					"MongoDb2_connectionString": {
+						"value": "[parameters('MongoDb2_connectionString')]"
+					},
+					"MongoDb1_properties_typeProperties_database": {
+						"value": "[parameters('MongoDb1_properties_typeProperties_database')]"
+					},
+					"MongoDb2_properties_typeProperties_database": {
+						"value": "[parameters('MongoDb2_properties_typeProperties_database')]"
 					}
 				}
 			},

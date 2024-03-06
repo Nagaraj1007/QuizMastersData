@@ -1,5 +1,5 @@
 {
-	"name": "pipeline1",
+	"name": "Ranking_Based_On_Questions",
 	"properties": {
 		"activities": [
 			{
@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataflow": {
-						"referenceName": "Dataflow_for_replacing_empty_values",
+						"referenceName": "Ranking_based_on_number_of_questions",
 						"type": "DataFlowReference"
 					},
 					"compute": {

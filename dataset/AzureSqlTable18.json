@@ -1,0 +1,49 @@
+{
+	"name": "AzureSqlTable18",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "id",
+				"type": "varchar"
+			},
+			{
+				"name": "brand_name",
+				"type": "varchar"
+			},
+			{
+				"name": "model_name",
+				"type": "varchar"
+			},
+			{
+				"name": "classification",
+				"type": "varchar"
+			},
+			{
+				"name": "wishlistcount",
+				"type": "varchar"
+			},
+			{
+				"name": "purchaseCount",
+				"type": "varchar"
+			},
+			{
+				"name": "avgRating",
+				"type": "varchar"
+			},
+			{
+				"name": "qty",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "LensData",
+			"table": "Details"
+		}
+	}
+}

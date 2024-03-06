@@ -1,5 +1,5 @@
 {
-	"name": "Contact_Lens_Price_Details",
+	"name": "Contact_Lens_Top_Products",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LenskartLinkedservice",
@@ -10,27 +10,15 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "Lenskart_Contact_Lens_Data_Prices.csv",
-				"container": "sourcelenskart"
+				"fileName": "Top_Products.csv",
+				"folderPath": "Contact_Lens",
+				"container": "destinationlenskart"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
-		"schema": [
-			{
-				"name": "Product Id",
-				"type": "String"
-			},
-			{
-				"name": "Market Price",
-				"type": "String"
-			},
-			{
-				"name": "Lenskart Price",
-				"type": "String"
-			}
-		]
+		"schema": []
 	}
 }
